@@ -19,7 +19,24 @@ A modern e-commerce platform built with Django and Tailwind CSS.
 
 1. Clone the repository
 2. Create and activate virtual environment
-3. Install requirements: `pip install -r requirements.txt`
+3. Install requirements:
+```
+  pip install -r requirements.txt
+  
+  // Install Node.js (https://nodejs.org/) then:
+  
+  // Install Tailwind and dependencies
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init
+  
+  // Create CSS file (in shop1django/static/css/tailwind.css)
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  // Build CSS (run this during development)
+  npx tailwindcss -i shop1django/static/css/tailwind.css -o shop1django/static/css/output.css --watch
+```
 4. Set up environment variables in `.env`
 5. Run migrations: `python manage.py migrate`
 6. Start development server: `python manage.py runserver`
