@@ -1,6 +1,6 @@
-# BrandName E-Commerce
+# Demo Brand Page with E-Commerce
 
-A modern e-commerce platform built with Django and Tailwind CSS.
+A demo e-commerce platform built with Django and Tailwind CSS.
 
 ## Features
 
