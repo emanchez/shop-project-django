@@ -22,8 +22,9 @@
     "update-browserslist-db": "^1.1.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --watch"
+    "dev": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --watch",
+    "build": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --minify && exit 0",
+    "build:ci": "NODE_ENV=production tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --minify"
   },
   "keywords": [],
   "author": "",
