@@ -26,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p^d1f@)4i6205*ya##f9&)z$*z_a%5$q)fr#pcjyk)-r!ho!vd'
+SECRET_KEY = env('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1']
 
 #PostgreSQL Database
 DATABASES = {
@@ -42,6 +42,10 @@ DATABASES = {
         'PASSWORD': env('DB_PASSWORD', default='yourpassword'),
         'HOST': env('DB_HOST', default='localhost'),
         'PORT': env('DB_PORT', default='5432'),
+        'OPTIONS': {
+            'sslmode': env('DB_SSL_MODE', default='require'),
+            # 'sslrootcert': env('DB_SSL_ROOT_CERT', default=None),  # Uncomment if using SSL cert
+        }
     }
 }
 
@@ -137,6 +141,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [path.join(BASE_DIR, 'shop1django/static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = path.join(BASE_DIR, 'media')
