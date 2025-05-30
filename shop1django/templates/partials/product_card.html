@@ -1,0 +1,25 @@
+<a href="{{ product.get_absolute_url }}" class="block">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <div class="relative pb-2/3 h-48">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="absolute h-full w-full object-cover">
+            {% else %}
+                <div class="absolute h-full w-full bg-gray-100 flex items-center justify-center">
+                    <span class="text-gray-400">No image</span>
+                </div>
+            {% endif %}
+        </div>
+        <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">{{ product.name }}</h3>
+            <div class="mt-2 flex justify-between items-center">
+                <span class="text-indigo-600 font-bold">${{ product.price }}</span>
+                <form action="{% url 'cart_add' product.id %}" method="post" class="inline">
+                    {% csrf_token %}
+                    <button type="submit" class="text-sm bg-indigo-600 text-white px-3 py-1 rounded hover:bg-indigo-700">
+                        Add to Cart
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</a>

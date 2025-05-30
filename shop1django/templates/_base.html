@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BrandName{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <!-- Additional CSS -->
+    <link href="{% static 'css/global.css' %}" rel="stylesheet">
+    {% block extra_css %}{% endblock %}
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+    <!-- Navigation -->
+    {% include "partials/_navigation.html" %}
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% include "partials/_footer.html" %}
+
+    <!-- JavaScript -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

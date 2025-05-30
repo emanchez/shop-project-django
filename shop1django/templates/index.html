@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<section class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold mb-6">Welcome to BrandName</h1>
+        <p class="text-xl mb-12 max-w-2xl mx-auto">Discover our premium products and exclusive content designed just for you.</p>
+        <a href="{% url 'shop' %}" class="inline-block bg-white text-indigo-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+            Shop Now
+        </a>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Featured Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Product cards would go here -->
+            {% for product in featured_products %}
+                {% include "partials/product_card.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="bg-indigo-700 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Ready to elevate your experience?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Join our community and get access to exclusive content and offers.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+                Sign Up Now
+            </button>
+            <button class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-indigo-700 transition duration-300">
+                Learn More
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}

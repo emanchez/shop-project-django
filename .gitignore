@@ -1,0 +1,44 @@
+# Django
+*.sqlite3
+*.pyc
+__pycache__/
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables
+.env
+.env/*
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Static files
+/staticfiles/
+/media/
+
+# Node modules
+node_modules/
+
+# Database migrations (optional - some teams keep these)
+# /migrations/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Tailwind CSS
+tailwind.config.js
+postcss.config.js

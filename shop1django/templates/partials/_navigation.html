@@ -1,0 +1,62 @@
+{% load static %}
+<nav class="bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <a href="{% url 'index' %}" class="text-2xl font-bold text-indigo-600">BrandName</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="{% url 'index' %}" class="{% if request.path == '/' %}text-indigo-600{% else %}text-gray-600{% endif %} hover:text-indigo-600">
+                    Home
+                </a>
+                <a href="{% url 'shop' %}" class="{% if '/shop' in request.path %}text-indigo-600{% else %}text-gray-600{% endif %} hover:text-indigo-600">
+                    Shop
+                </a>
+                <a href="{% url 'cart_detail' %}" class="flex items-center text-gray-600 hover:text-indigo-600">
+                    <img src="{% static 'images/cart.png' %}" alt="Cart" class="h-6 w-6">
+                    <span class="ml-1 bg-indigo-100 text-indigo-800 text-xs font-semibold px-2 py-0.5 rounded-full">
+                        {% with total_items=cart|length %}{{ total_items|default:0 }}{% endwith %}
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <a href="{% url 'cart_detail' %}" class="flex items-center">
+                    <img src="{% static 'images/cart.png' %}" alt="Cart" class="h-6 w-6">
+                    <span class="ml-1 bg-indigo-100 text-indigo-800 text-xs font-semibold px-2 py-0.5 rounded-full">
+                        {% with total_items=cart|length %}{{ total_items|default:0 }}{% endwith %}
+                    </span>
+                </a>
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <img src="{% static 'images/menu.png' %}" alt="Menu" class="h-6 w-6">
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu - Animated -->
+        <div id="mobile-menu" class="md:hidden transition-all duration-300 ease-in-out overflow-hidden max-h-0">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="{% url 'index' %}" class="block px-3 py-2 rounded-md {% if request.path == '/' %}bg-indigo-50 text-indigo-600{% else %}text-gray-600 hover:bg-gray-50{% endif %}">
+                    Home
+                </a>
+                <a href="{% url 'shop' %}" class="block px-3 py-2 rounded-md {% if '/shop' in request.path %}bg-indigo-50 text-indigo-600{% else %}text-gray-600 hover:bg-gray-50{% endif %}">
+                    Shop
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('max-h-0')) {
+            menu.classList.remove('max-h-0');
+            menu.classList.add('max-h-96'); // Adjust this value based on your content
+        } else {
+            menu.classList.add('max-h-0');
+            menu.classList.remove('max-h-96');
+        }
+    });
+</script>
