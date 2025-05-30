@@ -40,6 +40,3 @@ htmlcov/
 # macOS
 .DS_Store
 
-# Tailwind CSS
-tailwind.config.js
-postcss.config.js
