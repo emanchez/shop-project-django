@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
     'shop-project-django.vercel.app',
     '.now.sh',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    env('DB_HOST')
 ]
 
 # Supabase PostgreSQL Database
