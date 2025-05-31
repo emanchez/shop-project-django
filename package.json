@@ -23,7 +23,7 @@
   },
   "scripts": {
     "dev": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --watch",
-    "build": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --minify && exit 0",
+    "build": "tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --minify",
     "build:ci": "NODE_ENV=production tailwindcss -i ./shop1django/static/css/tailwind.css -o ./shop1django/static/css/output.css --minify"
   },
   "keywords": [],

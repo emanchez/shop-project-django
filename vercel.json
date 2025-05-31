@@ -20,6 +20,13 @@
     {
       "src": "staticfiles/**",  
       "use": "@vercel/static"
+    },    
+    {
+      "src": "tailwind.config.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "static"
+      }
     }
   ],
   "routes": [

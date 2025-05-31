@@ -2,6 +2,7 @@ module.exports = {
   content: [
     "./shop1django/templates/**/*.html",
     "./shop1django/static/**/*.js",
+    './**/*.py'
   ],
     variants: {
       extend: {
