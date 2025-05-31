@@ -44,8 +44,8 @@ DATABASES = {
         'HOST': env('DB_HOST'),
         'PORT': env('DB_PORT'),
         'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
         'OPTIONS': {
             'sslmode': env('DB_SSL_MODE'),
             'sslrootcert': env('DB_SSL_ROOT_CERT'),  # For production
