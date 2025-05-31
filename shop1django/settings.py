@@ -163,7 +163,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = path.join(BASE_DIR, 'staticfiles')  # ← Add this line
-STATICFILES_DIRS = [path.join(BASE_DIR, 'shop1django/static')]
+STATICFILES_DIRS = [path.join(BASE_DIR, 'staticfiles')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
