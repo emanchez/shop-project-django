@@ -8,6 +8,7 @@
         "runtime": "python3.9",
         "maxLambdaSize": "15mb",
         "installCommand": "pip install -r requirements.txt",
+        "buildCommand": "./build.sh",
         "includeFiles": [
           "shop1django/**",
           "staticfiles/**",
