@@ -15,6 +15,12 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    try:
+        import whitenoise
+        print(f"WhiteNoise found at: {whitenoise.__file__}")
+    except ImportError as e:
+        print(f"Import error: {e}")
+        raise
     execute_from_command_line(sys.argv)
 
 

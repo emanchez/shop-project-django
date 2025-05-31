@@ -11,12 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from os import path 
-import environ
+from os import path, getenv as env
 
 # Initialize environment variables
-env = environ.Env()
-environ.Env.read_env()
+
+#environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG', default=False)
+DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = [
     'shop-project-django.vercel.app/',
@@ -48,8 +47,8 @@ DATABASES = {
         'USER': env('DB_USER'),
         'PASSWORD': env('DB_PASSWORD'),
         'OPTIONS': {
-            'sslmode': env('DB_SSL_MODE', default='require'),
-            'sslrootcert': env('DB_SSL_ROOT_CERT', default=None),  # For production
+            'sslmode': env('DB_SSL_MODE'),
+            'sslrootcert': env('DB_SSL_ROOT_CERT'),  # For production
         },
     }
 }
