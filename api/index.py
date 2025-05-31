@@ -1,8 +1,8 @@
-import os
+import environ
 from serverless_wsgi import handle_request
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shop1django.settings")
+environ.setdefault("DJANGO_SETTINGS_MODULE", "shop1django.settings")
 
 app = get_wsgi_application()
 
