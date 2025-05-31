@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from os import path, getenv as env
+import dj_database_url
 
 # Initialize environment variables
 
@@ -39,21 +40,33 @@ ALLOWED_HOSTS = [
 ]
 
 # Supabase PostgreSQL Database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('DB_PORT'),
+#         'NAME': env('POSTGRES_DATABASE'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'OPTIONS': {
+#             'sslmode': env('DB_SSL_MODE'),
+#             'sslrootcert': env('DB_SSL_ROOT_CERT'),  # For production
+#             'options': '-c address_family=ipv4'  # Force IPv4
+#         },
+#     }
+# }
+# Parse DATABASE_URL from environment
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('DB_PORT'),
-        'NAME': env('POSTGRES_DATABASE'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'OPTIONS': {
-            'sslmode': env('DB_SSL_MODE'),
-            'sslrootcert': env('DB_SSL_ROOT_CERT'),  # For production
-            'options': '-c address_family=ipv4'  # Force IPv4
-        },
-    }
+    'default': dj_database_url.config(
+        default= env('POSTGRES_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
+
+# Force IPv4 if needed (add to OPTIONS)
+DATABASES['default']['OPTIONS'] = {'options': '-c address_family=ipv4'}
+
 
 # Application definition
 
