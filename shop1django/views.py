@@ -36,3 +36,4 @@ def cart_clear(request):
     cart = Cart(request)
     cart.clear()
     return redirect('cart_detail')
+

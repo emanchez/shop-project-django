@@ -1,8 +1,8 @@
 <a href="{{ product.get_absolute_url }}" class="block">
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
         <div class="relative pb-2/3 h-48">
-            {% if product.image %}
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="absolute h-full w-full object-cover">
+            {% if product.image_url %}
+                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="absolute h-full w-full object-cover">
             {% else %}
                 <div class="absolute h-full w-full bg-gray-100 flex items-center justify-center">
                     <span class="text-gray-400">No image</span>
