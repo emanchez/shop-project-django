@@ -16,4 +16,4 @@ environ.setdefault('DJANGO_SETTINGS_MODULE', 'shop1django.settings')
 application = get_wsgi_application()
 
 
-handler = application  # Required for Vercel
+app = application  # Required for Vercel
