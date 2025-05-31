@@ -7,11 +7,11 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
 """
 
-import environ
+import os
 from django.core.handlers.wsgi import WSGIHandler
 from django.core.wsgi import get_wsgi_application
 
-environ.setdefault('DJANGO_SETTINGS_MODULE', 'shop1django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shop1django.settings')
 
 application = get_wsgi_application()
 
