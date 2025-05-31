@@ -33,6 +33,7 @@ DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = [
     'shop-project-django.vercel.app',
+    '.vercel.app',
     '.now.sh',
     'localhost',
     '127.0.0.1',
@@ -60,13 +61,14 @@ DATABASES = {
     'default': dj_database_url.config(
         default= env('POSTGRES_URL'),
         conn_max_age=600,
-        conn_health_checks=True,
     )
 }
 
+
 # Force IPv4 if needed (add to OPTIONS)
 DATABASES['default']['OPTIONS'] = {'options': '-c address_family=ipv4'}
-
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql',
+DATABASES['default']['NAME'] = env('POSTGRES_DATABASE')
 
 # Application definition
 
