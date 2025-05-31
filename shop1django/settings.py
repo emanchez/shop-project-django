@@ -31,7 +31,7 @@ SECRET_KEY = env('DJANGO_SECRET')
 DEBUG = bool(env('DEBUG'))
 
 ALLOWED_HOSTS = [
-    'shop-project-django.vercel.app/',
+    'shop-project-django.vercel.app',
     '.now.sh',
     'localhost',
     '127.0.0.1'
