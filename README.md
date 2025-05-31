@@ -34,8 +34,6 @@ A demo e-commerce platform built with Django and Tailwind CSS.
   @tailwind components;
   @tailwind utilities;
   
-  // Build CSS (run this during development)
-  npx tailwindcss -i shop1django/static/css/tailwind.css -o shop1django/static/css/output.css --watch
 ```
 4. Set up environment variables in `.env`
 5. Run migrations: `python manage.py migrate`
