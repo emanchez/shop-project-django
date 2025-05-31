@@ -49,6 +49,7 @@ DATABASES = {
         'OPTIONS': {
             'sslmode': env('DB_SSL_MODE'),
             'sslrootcert': env('DB_SSL_ROOT_CERT'),  # For production
+            'options': '-c address_family=ipv4'  # Force IPv4
         },
     }
 }
