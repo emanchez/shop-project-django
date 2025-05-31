@@ -1,3 +1,5 @@
+[Vew demo ➡️](https://shop-project-django.vercel.app/)
+
 # Demo Brand Page with E-Commerce
 
 A demo e-commerce platform built with Django and Tailwind CSS.
