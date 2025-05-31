@@ -24,8 +24,8 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/(.*)",  
-      "dest": "shop1django/wsgi.py"
+      "src": "/(.*)",
+      "dest": "api/index.py" 
     }
   ]
 }

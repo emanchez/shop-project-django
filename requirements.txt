@@ -3,4 +3,4 @@ django-environ==0.12.0
 psycopg2-binary==2.9.10
 Pillow==11.2.1
 whitenoise==6.5.0  # For static files
-gunicorn==21.2.0   # WSGI server
+gunicorn==21.2.0   # WSGI serverserverless-wsgi==3.0.5
