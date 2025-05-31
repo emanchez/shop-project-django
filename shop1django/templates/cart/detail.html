@@ -45,7 +45,7 @@
                 <tfoot class="bg-gray-50">
                     <tr>
                         <td colspan="3" class="py-4 px-6 text-right font-bold">Subtotal:</td>
-                        <td colspan="2" class="py-4 px-6 font-bold">${{ cart.get_total_price }}</td>
+                        <td colspan="2" class="py-4 px-6 font-bold">${{ cart.get_total_price|floatformat:2 }}</td>
                     </tr>
                 </tfoot>
             </table>
