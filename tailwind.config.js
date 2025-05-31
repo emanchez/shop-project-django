@@ -15,6 +15,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  output: './static/css/styles.css'  // Explicit output path
   
 }
