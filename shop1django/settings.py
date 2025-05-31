@@ -59,7 +59,7 @@ ALLOWED_HOSTS = [
 # Parse DATABASE_URL from environment
 DATABASES = {
     'default': dj_database_url.config(
-        default= env('POSTGRES_URL'),
+        default= env('POSTGRES_URL_NON_POOLING'),
         conn_max_age=600,
     )
 }
@@ -67,8 +67,7 @@ DATABASES = {
 
 # Force IPv4 if needed (add to OPTIONS)
 DATABASES['default']['OPTIONS'] = {'options': '-c address_family=ipv4'}
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql',
-DATABASES['default']['NAME'] = env('POSTGRES_DATABASE')
+
 
 # Application definition
 
