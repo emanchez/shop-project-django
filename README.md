@@ -1,3 +1,5 @@
+In the works: A project for user analytics tracking using this site to collect user activity [here](https://github.com/emanchez/analytics-app)
+
 [Vew demo ➡️](https://shop-project-django.vercel.app/)
 
 # Demo Brand Page with E-Commerce
